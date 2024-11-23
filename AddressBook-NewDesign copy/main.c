@@ -23,7 +23,7 @@ int main() {
                 createContact(&addressBook);
                 break;
             case 2:
-                searchContact(&addressBook);
+                searchContact(&addressBook, NULL);
                 break;
             case 3:
                 editContact(&addressBook);

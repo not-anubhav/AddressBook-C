@@ -89,10 +89,11 @@ void createContact(AddressBook *addressBook)
 	addressBook->contactCount++;
 }
 
-void searchContact(AddressBook *addressBook)
+int searchContact(AddressBook *addressBook, int* foundindices)
 {
     /* Define the logic for search */
     int option;
+    int foundCount = 0;
     int search_n = 0;
     int search_p = 0;
     int search_e = 0;
@@ -115,14 +116,14 @@ void searchContact(AddressBook *addressBook)
                     scanf("%[^\n]", name);
                     if(read_name(addressBook, name) == 1)
                     {
-                        search_n = search_name(addressBook, name);
+                        search_n = search_name(addressBook, name, foundindices, &foundCount);
                     }
                     else{
                         printf("Invalid Name.\n");
                     }
                     getchar();
                 }while(search_n == 0);
-                break;
+                return foundCount;
             case 2:
                 do
                 {
@@ -131,14 +132,14 @@ void searchContact(AddressBook *addressBook)
                     scanf("%s", phone);
                     if(read_mob(addressBook, phone) == 1)
                     {
-                        search_p = search_phone(addressBook, phone);
+                        search_p = search_phone(addressBook, phone, foundindices, &foundCount);
                     }
                     else {
                         printf("Invalid Phone no.\n");
                     }
                     getchar();
                 }while(search_p == 0);
-                break;
+                return foundCount;
             case 3:
                 do
                 {
@@ -147,16 +148,16 @@ void searchContact(AddressBook *addressBook)
                     scanf("%s", email);
                     if(read_email(addressBook, email) == 1)
                     {
-                        search_e = search_email(addressBook, email);
+                        search_e = search_email(addressBook, email, foundindices, &foundCount);
                     }
                     else {
                         printf("Invalid Email ID.\n");
                     }
                     //getchar();
                 }while(search_e == 0);
-                break;
+                return foundCount;
             case 4:
-                break;
+                return -1;
             default:
                 printf("Invalid choice. Please try again.\n");
         }
@@ -172,5 +173,39 @@ void editContact(AddressBook *addressBook)
 void deleteContact(AddressBook *addressBook)
 {
 	/* Define the logic for deletecontact */
+	int foundindices[100];
+	int foundCount = searchContact(addressBook, foundindices);
+	if (foundCount <=0)
+	{
+	   printf("No contact found\n");
+	   return;
+	}
+
+	int deleteindex = 0;
+	int del_flag = 0;
+	do {
+        printf("Enter the contact no. you want to delete : ");
+        scanf("%d", &deleteindex);
+        getchar();
+        int actualindex = deleteindex - 1;
+        for (int i = 0; i <= foundCount; i++) {
+            if (actualindex == foundindices[i])
+            {
+                del_flag = 1;
+                break;
+            }
+        }
+        if(del_flag == 1)
+        {
+            for ( int j = actualindex; j <=addressBook-> contactCount; j++ ){
+            addressBook->contacts[j] = addressBook->contacts[j + 1];
+            }
+            addressBook->contactCount--;
+            printf("Contact deleted successfully.\n");
+        }
+        else{
+            printf("Enter Valid Contact no.\n");
+        }
+	}while (del_flag == 0);
 
 }

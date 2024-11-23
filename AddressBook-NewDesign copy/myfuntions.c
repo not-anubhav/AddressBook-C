@@ -155,7 +155,7 @@ int validate_email(AddressBook *addressBook, char email[])
     return already_present;
 }
 
-int search_name(AddressBook *addressBook, char name[])
+int search_name(AddressBook *addressBook, char name[], int* foundindices, int* foundCount)
 {
 
     int flag_found = 0;
@@ -164,6 +164,10 @@ int search_name(AddressBook *addressBook, char name[])
         if (strcmp(addressBook->contacts[i].name, name) == 0)
         {
             flag_found = 1;
+            if (foundindices != NULL){
+                foundindices[*foundCount] = i;
+                (*foundCount)++;
+            }
             printf("Contact %d: %s, Phone: %s, Email ID: %s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
         }
     }
@@ -173,7 +177,7 @@ int search_name(AddressBook *addressBook, char name[])
     return flag_found;
 }
 
-int search_phone(AddressBook *addressBook, char phone[])
+int search_phone(AddressBook *addressBook, char phone[],int* foundindices, int* foundCount)
 {
     int flag_found = 0;
 
@@ -182,6 +186,10 @@ int search_phone(AddressBook *addressBook, char phone[])
         if(strcmp(addressBook->contacts[i].phone, phone) == 0)
         {
             flag_found = 1;
+            if (foundindices != NULL){
+                foundindices[*foundCount] = i;
+                (*foundCount)++;
+            }
             printf("Contact %d: %s, Phone: %s, Email ID: %s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
         }
     }
@@ -191,7 +199,7 @@ int search_phone(AddressBook *addressBook, char phone[])
     return flag_found;
 }
 
-int search_email(AddressBook *addressBook, char email[])
+int search_email(AddressBook *addressBook, char email[], int* foundindices, int* foundCount)
 {
     int flag_found = 0;
     for (int i = 0; i < addressBook->contactCount; i++)
@@ -199,6 +207,10 @@ int search_email(AddressBook *addressBook, char email[])
         if(strcmp(addressBook->contacts[i].email, email) == 0)
         {
             flag_found = 1;
+            if (foundindices != NULL){
+                foundindices[*foundCount] = i;
+                (*foundCount)++;
+            }
             printf("Contact %d: %s, Phone: %s, Email ID: %s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
         }
     }
