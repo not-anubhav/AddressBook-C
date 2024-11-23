@@ -37,8 +37,8 @@ void createContact(AddressBook *addressBook)
 	do
 	{
 	    char name[50];
-        printf("Enter the Contact Name : ");
-        scanf("%[^\n]", name);
+            printf("Enter the Contact Name : ");
+            scanf("%[^\n]", name);
 	    n_flag = read_name(addressBook, name);
 		if(n_flag == 1)
 		{
