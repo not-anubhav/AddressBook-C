@@ -27,7 +27,7 @@ int read_email(AddressBook *addressBook, char []);
 int search_name(AddressBook *addressBook, char []);
 int search_phone(AddressBook *addressBook, char []);
 int search_email(AddressBook *addressBook, char []);
-void validate_phone(AddressBook *addressBook, char []);
-void validate_email(AddressBook *addressBook, char []);
+int validate_phone(AddressBook *addressBook, char []);
+int validate_email(AddressBook *addressBook, char []);
 
 #endif
