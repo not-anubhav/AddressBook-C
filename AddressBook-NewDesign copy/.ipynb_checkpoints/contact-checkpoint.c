@@ -188,7 +188,7 @@ void deleteContact(AddressBook *addressBook)
         scanf("%d", &deleteindex);
         getchar();
         int actualindex = deleteindex - 1;
-        for (int i = 0; i < foundCount; i++) {
+        for (int i = 0; i <= foundCount; i++) {
             if (actualindex == foundindices[i])
             {
                 del_flag = 1;
@@ -197,7 +197,7 @@ void deleteContact(AddressBook *addressBook)
         }
         if(del_flag == 1)
         {
-            for ( int j = actualindex; j < addressBook->contactCount - 1; j++ ){
+            for ( int j = actualindex; j <=addressBook-> contactCount; j++ ){
             addressBook->contacts[j] = addressBook->contacts[j + 1];
             }
             addressBook->contactCount--;
