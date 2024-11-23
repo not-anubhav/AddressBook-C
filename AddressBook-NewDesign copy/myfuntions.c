@@ -1,7 +1,7 @@
+#include "contact.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include "contact.h"
 
 int read_name(AddressBook *addressBook, char name[])
 {
