@@ -6,10 +6,7 @@
 int read_name(AddressBook *addressBook, char name[])
 {
     int name_flag = 1;
- //    char name[50];
- //    printf("Enter the Contact Name : ");
-	// scanf("%[^\n]", name);
-	if (name[0] == ' ' || name[strlen(name) - 1] == ' ')
+	if (name[0] == ' ' || name[strlen(name) - 1] == ' ' || strlen(name) > 49)
 	{
 	   name_flag = 0;
     }else
@@ -80,7 +77,7 @@ int read_email(AddressBook *addressBook, char email[]) {
     int dot_index = -1;
 
 
-    if (email[0] == '@' || email[0] == '.' || email[0] == ' ' || email[0] == '\t' ||
+    if ( strlen(email) > 49 || email[0] == '@' || email[0] == '.' || email[0] == ' ' || email[0] == '\t' ||
         email[strlen(email) - 1] == '@' || email[strlen(email) - 1] == '.') {
         printf("Enter a valid Email ID.\n");
         return 0;

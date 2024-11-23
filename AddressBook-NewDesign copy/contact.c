@@ -43,7 +43,6 @@ void createContact(AddressBook *addressBook)
 		if(n_flag == 1)
 		{
 			strcpy(addressBook->contacts[addressBook->contactCount].name, name);
-			//addressBook->contactCount++;
 		}
 		else {
 			printf("Invalid Name.\n");
@@ -127,7 +126,7 @@ int searchContact(AddressBook *addressBook, int* foundindices)
             case 2:
                 do
                 {
-                    char phone[50];
+                    char phone[10];
                     printf("Enter the Contact Phone no.: ");
                     scanf("%s", phone);
                     if(read_mob(addressBook, phone) == 1)
