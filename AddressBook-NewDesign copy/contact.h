@@ -21,8 +21,13 @@ void deleteContact(AddressBook *addressBook);
 void listContacts(AddressBook *addressBook);
 void initialize(AddressBook *addressBook);
 void saveContactsToFile(AddressBook *AddressBook);
-int read_name(AddressBook *addressBook);
-int read_mob(AddressBook *addressBook);
-int read_email(AddressBook *addressBook);
+int read_name(AddressBook *addressBook, char []);
+int read_mob(AddressBook *addressBook, char []);
+int read_email(AddressBook *addressBook, char []);
+int search_name(AddressBook *addressBook, char []);
+int search_phone(AddressBook *addressBook, char []);
+int search_email(AddressBook *addressBook, char []);
+void validate_phone(AddressBook *addressBook, char []);
+void validate_email(AddressBook *addressBook, char []);
 
 #endif
