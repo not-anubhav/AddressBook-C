@@ -1,5 +1,0 @@
-populate.o: populate.c /usr/include/stdc-predef.h contact.h
-
-/usr/include/stdc-predef.h:
-
-contact.h:
