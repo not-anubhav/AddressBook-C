@@ -73,31 +73,31 @@ PATH: /usr/local/rvm/bin
 ## Core tests. ##
 ## ----------- ##
 
-configure:1839: checking for a BSD-compatible install
-configure:1907: result: /usr/bin/install -c
-configure:1918: checking whether build environment is sane
-configure:1973: result: yes
-configure:2122: checking for a thread-safe mkdir -p
-configure:2161: result: /usr/bin/mkdir -p
-configure:2168: checking for gawk
-configure:2184: found /usr/bin/gawk
-configure:2195: result: gawk
-configure:2206: checking whether make sets $(MAKE)
-configure:2228: result: yes
-configure:2257: checking whether make supports nested variables
-configure:2274: result: yes
-configure:2448: checking for gcc
-configure:2464: found /usr/bin/gcc
-configure:2475: result: gcc
-configure:2704: checking for C compiler version
-configure:2713: gcc --version >&5
+configure:2174: checking for a BSD-compatible install
+configure:2242: result: /usr/bin/install -c
+configure:2253: checking whether build environment is sane
+configure:2308: result: yes
+configure:2457: checking for a thread-safe mkdir -p
+configure:2496: result: /usr/bin/mkdir -p
+configure:2503: checking for gawk
+configure:2519: found /usr/bin/gawk
+configure:2530: result: gawk
+configure:2541: checking whether make sets $(MAKE)
+configure:2563: result: yes
+configure:2592: checking whether make supports nested variables
+configure:2609: result: yes
+configure:2783: checking for gcc
+configure:2799: found /usr/bin/gcc
+configure:2810: result: gcc
+configure:3039: checking for C compiler version
+configure:3048: gcc --version >&5
 gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
 Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:2724: $? = 0
-configure:2713: gcc -v >&5
+configure:3059: $? = 0
+configure:3048: gcc -v >&5
 Using built-in specs.
 COLLECT_GCC=gcc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -107,65 +107,282 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
-configure:2724: $? = 0
-configure:2713: gcc -V >&5
+configure:3059: $? = 0
+configure:3048: gcc -V >&5
 gcc: error: unrecognized command line option '-V'
 gcc: fatal error: no input files
 compilation terminated.
-configure:2724: $? = 1
-configure:2713: gcc -qversion >&5
+configure:3059: $? = 1
+configure:3048: gcc -qversion >&5
 gcc: error: unrecognized command line option '-qversion'; did you mean '--version'?
 gcc: fatal error: no input files
 compilation terminated.
-configure:2724: $? = 1
-configure:2744: checking whether the C compiler works
-configure:2766: gcc    conftest.c  >&5
-configure:2770: $? = 0
-configure:2818: result: yes
-configure:2821: checking for C compiler default output file name
-configure:2823: result: a.out
-configure:2829: checking for suffix of executables
-configure:2836: gcc -o conftest    conftest.c  >&5
-configure:2840: $? = 0
-configure:2862: result: 
-configure:2884: checking whether we are cross compiling
-configure:2892: gcc -o conftest    conftest.c  >&5
-configure:2896: $? = 0
-configure:2903: ./conftest
-configure:2907: $? = 0
-configure:2895: result: no
-configure:2900: checking for suffix of object files
-configure:2922: gcc -c   conftest.c >&5
-configure:2926: $? = 0
-configure:2947: result: o
-configure:2951: checking whether we are using the GNU C compiler
-configure:2970: gcc -c   conftest.c >&5
-configure:2970: $? = 0
-configure:2979: result: yes
-configure:2988: checking whether gcc accepts -g
-configure:3008: gcc -c -g  conftest.c >&5
-configure:3008: $? = 0
-configure:3049: result: yes
-configure:3066: checking for gcc option to accept ISO C89
-configure:3129: gcc  -c -g -O2  conftest.c >&5
-configure:3129: $? = 0
-configure:3142: result: none needed
-configure:3167: checking whether gcc understands -c and -o together
-configure:3189: gcc -c conftest.c -o conftest2.o
-configure:3192: $? = 0
-configure:3189: gcc -c conftest.c -o conftest2.o
-configure:3192: $? = 0
-configure:3204: result: yes
-configure:3224: checking whether make supports the include directive
-configure:3239: make -f confmf.GNU && cat confinc.out
-this is the am__doit target
+configure:3059: $? = 1
+configure:3079: checking whether the C compiler works
+configure:3101: gcc    conftest.c  >&5
+configure:3105: $? = 0
+configure:3153: result: yes
+configure:3156: checking for C compiler default output file name
+configure:3158: result: a.out
+configure:3164: checking for suffix of executables
+configure:3171: gcc -o conftest    conftest.c  >&5
+configure:3175: $? = 0
+configure:3197: result: 
+configure:3219: checking whether we are cross compiling
+configure:3227: gcc -o conftest    conftest.c  >&5
+configure:3231: $? = 0
+configure:3238: ./conftest
 configure:3242: $? = 0
-configure:3261: result: yes (GNU style)
-configure:3286: checking dependency style of gcc
-configure:3397: result: none
-configure:3551: checking that generated files are newer than configure
-configure:3557: result: done
-configure:3580: creating ./config.status
+configure:3230: result: no
+configure:3235: checking for suffix of object files
+configure:3257: gcc -c   conftest.c >&5
+configure:3261: $? = 0
+configure:3282: result: o
+configure:3286: checking whether we are using the GNU C compiler
+configure:3305: gcc -c   conftest.c >&5
+configure:3305: $? = 0
+configure:3314: result: yes
+configure:3323: checking whether gcc accepts -g
+configure:3343: gcc -c -g  conftest.c >&5
+configure:3343: $? = 0
+configure:3384: result: yes
+configure:3401: checking for gcc option to accept ISO C89
+configure:3464: gcc  -c -g -O2  conftest.c >&5
+configure:3464: $? = 0
+configure:3477: result: none needed
+configure:3502: checking whether gcc understands -c and -o together
+configure:3524: gcc -c conftest.c -o conftest2.o
+configure:3527: $? = 0
+configure:3524: gcc -c conftest.c -o conftest2.o
+configure:3527: $? = 0
+configure:3539: result: yes
+configure:3559: checking whether make supports the include directive
+configure:3574: make -f confmf.GNU && cat confinc.out
+this is the am__doit target
+configure:3577: $? = 0
+configure:3596: result: yes (GNU style)
+configure:3621: checking dependency style of gcc
+configure:3732: result: gcc3
+configure:3749: WARNING: Libtool does not cope well with whitespace in `pwd`
+configure:3776: checking build system type
+configure:3790: result: x86_64-pc-linux-gnu
+configure:3810: checking host system type
+configure:3823: result: x86_64-pc-linux-gnu
+configure:3864: checking how to print strings
+configure:3891: result: printf
+configure:3912: checking for a sed that does not truncate output
+configure:3976: result: /usr/bin/sed
+configure:3994: checking for grep that handles long lines and -e
+configure:4052: result: /usr/bin/grep
+configure:4057: checking for egrep
+configure:4119: result: /usr/bin/grep -E
+configure:4124: checking for fgrep
+configure:4186: result: /usr/bin/grep -F
+configure:4221: checking for ld used by gcc
+configure:4288: result: /usr/bin/ld
+configure:4295: checking if the linker (/usr/bin/ld) is GNU ld
+configure:4310: result: yes
+configure:4322: checking for BSD- or MS-compatible name lister (nm)
+configure:4376: result: /usr/bin/nm -B
+configure:4506: checking the name lister (/usr/bin/nm -B) interface
+configure:4513: gcc -c -g -O2  conftest.c >&5
+configure:4516: /usr/bin/nm -B "conftest.o"
+configure:4519: output
+0000000000000000 B some_variable
+configure:4520: result: BSD nm
+configure:4523: checking whether ln -s works
+configure:4527: result: yes
+configure:4535: checking the maximum length of command line arguments
+configure:4666: result: 1572864
+configure:4714: checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format
+configure:4754: result: func_convert_file_noop
+configure:4761: checking how to convert x86_64-pc-linux-gnu file names to toolchain format
+configure:4781: result: func_convert_file_noop
+configure:4788: checking for /usr/bin/ld option to reload object files
+configure:4795: result: -r
+configure:4869: checking for objdump
+configure:4885: found /usr/bin/objdump
+configure:4896: result: objdump
+configure:4928: checking how to recognize dependent libraries
+configure:5128: result: pass_all
+configure:5213: checking for dlltool
+configure:5243: result: no
+configure:5273: checking how to associate runtime and link libraries
+configure:5300: result: printf %s\n
+configure:5361: checking for ar
+configure:5377: found /usr/bin/ar
+configure:5388: result: ar
+configure:5425: checking for archiver @FILE support
+configure:5442: gcc -c -g -O2  conftest.c >&5
+configure:5442: $? = 0
+configure:5445: ar cr libconftest.a @conftest.lst >&5
+configure:5448: $? = 0
+configure:5453: ar cr libconftest.a @conftest.lst >&5
+ar: conftest.o: No such file or directory
+configure:5456: $? = 1
+configure:5455: result: @
+configure:5513: checking for strip
+configure:5529: found /usr/bin/strip
+configure:5540: result: strip
+configure:5612: checking for ranlib
+configure:5628: found /usr/bin/ranlib
+configure:5639: result: ranlib
+configure:5741: checking command to parse /usr/bin/nm -B output from gcc object
+configure:5894: gcc -c -g -O2  conftest.c >&5
+configure:5897: $? = 0
+configure:5901: /usr/bin/nm -B conftest.o | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' > conftest.nm
+configure:5967: gcc -o conftest -g -O2   conftest.c conftstm.o >&5
+configure:5970: $? = 0
+configure:6008: result: ok
+configure:6055: checking for sysroot
+configure:6085: result: no
+configure:6092: checking for a working dd
+configure:6130: result: /usr/bin/dd
+configure:6134: checking how to truncate binary pipes
+configure:6149: result: /usr/bin/dd bs=4096 count=1
+configure:6285: gcc -c -g -O2  conftest.c >&5
+configure:6288: $? = 0
+configure:6478: checking for mt
+configure:6508: result: no
+configure:6528: checking if : is a manifest tool
+configure:6534: : '-?'
+configure:6542: result: no
+configure:7219: checking how to run the C preprocessor
+configure:7250: gcc -E  conftest.c
+configure:7250: $? = 0
+configure:7264: gcc -E  conftest.c
+conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
+   11 | #include <ac_nonexistent.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+configure:7264: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "Address Book"
+| #define PACKAGE_TARNAME "address-book"
+| #define PACKAGE_VERSION "1.0"
+| #define PACKAGE_STRING "Address Book 1.0"
+| #define PACKAGE_BUGREPORT "notanubhav@gmail.com"
+| #define PACKAGE_URL ""
+| #define PACKAGE "address-book"
+| #define VERSION "1.0"
+| /* end confdefs.h.  */
+| #include <ac_nonexistent.h>
+configure:7289: result: gcc -E
+configure:7309: gcc -E  conftest.c
+configure:7309: $? = 0
+configure:7323: gcc -E  conftest.c
+conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
+   11 | #include <ac_nonexistent.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+configure:7323: $? = 1
+configure: failed program was:
+| /* confdefs.h */
+| #define PACKAGE_NAME "Address Book"
+| #define PACKAGE_TARNAME "address-book"
+| #define PACKAGE_VERSION "1.0"
+| #define PACKAGE_STRING "Address Book 1.0"
+| #define PACKAGE_BUGREPORT "notanubhav@gmail.com"
+| #define PACKAGE_URL ""
+| #define PACKAGE "address-book"
+| #define VERSION "1.0"
+| /* end confdefs.h.  */
+| #include <ac_nonexistent.h>
+configure:7352: checking for ANSI C header files
+configure:7372: gcc -c -g -O2  conftest.c >&5
+configure:7372: $? = 0
+configure:7445: gcc -o conftest -g -O2   conftest.c  >&5
+configure:7445: $? = 0
+configure:7445: ./conftest
+configure:7445: $? = 0
+configure:7456: result: yes
+configure:7469: checking for sys/types.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for sys/stat.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for stdlib.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for string.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for memory.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for strings.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for inttypes.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for stdint.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7469: checking for unistd.h
+configure:7469: gcc -c -g -O2  conftest.c >&5
+configure:7469: $? = 0
+configure:7469: result: yes
+configure:7483: checking for dlfcn.h
+configure:7483: gcc -c -g -O2  conftest.c >&5
+configure:7483: $? = 0
+configure:7483: result: yes
+configure:7739: checking for objdir
+configure:7754: result: .libs
+configure:8014: checking if gcc supports -fno-rtti -fno-exceptions
+configure:8032: gcc -c -g -O2  -fno-rtti -fno-exceptions conftest.c >&5
+cc1: warning: command line option '-fno-rtti' is valid for C++/D/ObjC++ but not for C
+configure:8036: $? = 0
+configure:8049: result: no
+configure:8413: checking for gcc option to produce PIC
+configure:8420: result: -fPIC -DPIC
+configure:8428: checking if gcc PIC flag -fPIC -DPIC works
+configure:8446: gcc -c -g -O2  -fPIC -DPIC -DPIC conftest.c >&5
+configure:8450: $? = 0
+configure:8463: result: yes
+configure:8492: checking if gcc static flag -static works
+configure:8520: result: yes
+configure:8535: checking if gcc supports -c -o file.o
+configure:8556: gcc -c -g -O2  -o out/conftest2.o conftest.c >&5
+configure:8560: $? = 0
+configure:8582: result: yes
+configure:8590: checking if gcc supports -c -o file.o
+configure:8637: result: yes
+configure:8670: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:9933: result: yes
+configure:9970: checking whether -lc should be explicitly linked in
+configure:9978: gcc -c -g -O2  conftest.c >&5
+configure:9981: $? = 0
+configure:9996: gcc -shared  -fPIC -DPIC conftest.o  -v -Wl,-soname -Wl,conftest -o conftest 2\>\&1 \| /usr/bin/grep  -lc  \>/dev/null 2\>\&1
+configure:9999: $? = 0
+configure:10013: result: no
+configure:10173: checking dynamic linker characteristics
+configure:10754: gcc -o conftest -g -O2   -Wl,-rpath -Wl,/foo conftest.c  >&5
+configure:10754: $? = 0
+configure:11003: result: GNU/Linux ld.so
+configure:11125: checking how to hardcode library paths into programs
+configure:11150: result: immediate
+configure:11698: checking whether stripping libraries is possible
+configure:11703: result: yes
+configure:11738: checking if libtool supports shared libraries
+configure:11740: result: yes
+configure:11743: checking whether to build shared libraries
+configure:11768: result: yes
+configure:11771: checking whether to build static libraries
+configure:11775: result: yes
+configure:8727: checking that generated files are newer than configure
+configure:8733: result: done
+configure:8756: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -182,12 +399,17 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on codespaces-422347
 
-config.status:755: error: cannot find input file: `Makefile.in'
+config.status:1003: creating Makefile
+config.status:1175: executing depfiles commands
+config.status:1252: cd .       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+config.status:1257: $? = 0
+config.status:1175: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
 ## ---------------- ##
 
+ac_cv_build=x86_64-pc-linux-gnu
 ac_cv_c_compiler_gnu=yes
 ac_cv_env_CC_set=
 ac_cv_env_CC_value=
@@ -195,27 +417,81 @@ ac_cv_env_CFLAGS_set=
 ac_cv_env_CFLAGS_value=
 ac_cv_env_CPPFLAGS_set=
 ac_cv_env_CPPFLAGS_value=
+ac_cv_env_CPP_set=
+ac_cv_env_CPP_value=
 ac_cv_env_LDFLAGS_set=
 ac_cv_env_LDFLAGS_value=
 ac_cv_env_LIBS_set=
 ac_cv_env_LIBS_value=
+ac_cv_env_LT_SYS_LIBRARY_PATH_set=
+ac_cv_env_LT_SYS_LIBRARY_PATH_value=
 ac_cv_env_build_alias_set=
 ac_cv_env_build_alias_value=
 ac_cv_env_host_alias_set=
 ac_cv_env_host_alias_value=
 ac_cv_env_target_alias_set=
 ac_cv_env_target_alias_value=
+ac_cv_header_dlfcn_h=yes
+ac_cv_header_inttypes_h=yes
+ac_cv_header_memory_h=yes
+ac_cv_header_stdc=yes
+ac_cv_header_stdint_h=yes
+ac_cv_header_stdlib_h=yes
+ac_cv_header_string_h=yes
+ac_cv_header_strings_h=yes
+ac_cv_header_sys_stat_h=yes
+ac_cv_header_sys_types_h=yes
+ac_cv_header_unistd_h=yes
+ac_cv_host=x86_64-pc-linux-gnu
 ac_cv_objext=o
+ac_cv_path_EGREP='/usr/bin/grep -E'
+ac_cv_path_FGREP='/usr/bin/grep -F'
+ac_cv_path_GREP=/usr/bin/grep
+ac_cv_path_SED=/usr/bin/sed
 ac_cv_path_install='/usr/bin/install -c'
+ac_cv_path_lt_DD=/usr/bin/dd
 ac_cv_path_mkdir=/usr/bin/mkdir
 ac_cv_prog_AWK=gawk
+ac_cv_prog_CPP='gcc -E'
+ac_cv_prog_ac_ct_AR=ar
 ac_cv_prog_ac_ct_CC=gcc
+ac_cv_prog_ac_ct_OBJDUMP=objdump
+ac_cv_prog_ac_ct_RANLIB=ranlib
+ac_cv_prog_ac_ct_STRIP=strip
 ac_cv_prog_cc_c89=
 ac_cv_prog_cc_g=yes
 ac_cv_prog_make_make_set=yes
-am_cv_CC_dependencies_compiler_type=none
+am_cv_CC_dependencies_compiler_type=gcc3
 am_cv_make_support_nested_variables=yes
 am_cv_prog_cc_c_o=yes
+lt_cv_ar_at_file=@
+lt_cv_archive_cmds_need_lc=no
+lt_cv_deplibs_check_method=pass_all
+lt_cv_file_magic_cmd='$MAGIC_CMD'
+lt_cv_file_magic_test_file=
+lt_cv_ld_reload_flag=-r
+lt_cv_nm_interface='BSD nm'
+lt_cv_objdir=.libs
+lt_cv_path_LD=/usr/bin/ld
+lt_cv_path_NM='/usr/bin/nm -B'
+lt_cv_path_mainfest_tool=no
+lt_cv_prog_compiler_c_o=yes
+lt_cv_prog_compiler_pic='-fPIC -DPIC'
+lt_cv_prog_compiler_pic_works=yes
+lt_cv_prog_compiler_rtti_exceptions=no
+lt_cv_prog_compiler_static_works=yes
+lt_cv_prog_gnu_ld=yes
+lt_cv_sharedlib_from_linklib_cmd='printf %s\n'
+lt_cv_shlibpath_overrides_runpath=yes
+lt_cv_sys_global_symbol_pipe='sed -n -e '\''s/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p'\'' | sed '\''/ __gnu_lto/d'\'''
+lt_cv_sys_global_symbol_to_c_name_address='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/  {"\1", (void *) \&\1},/p'\'''
+lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(lib.*\)$/  {"\1", (void *) \&\1},/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/  {"lib\1", (void *) \&\1},/p'\'''
+lt_cv_sys_global_symbol_to_cdecl='sed -n -e '\''s/^T .* \(.*\)$/extern int \1();/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p'\'''
+lt_cv_sys_global_symbol_to_import=
+lt_cv_sys_max_cmd_len=1572864
+lt_cv_to_host_file_cmd=func_convert_file_noop
+lt_cv_to_tool_file_cmd=func_convert_file_noop
+lt_cv_truncate_bin='/usr/bin/dd bs=4096 count=1'
 
 ## ----------------- ##
 ## Output variables. ##
@@ -230,32 +506,51 @@ AM_BACKSLASH='\'
 AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='1'
 AM_V='$(V)'
+AR='ar'
 AUTOCONF='${SHELL} "/workspaces/AddressBook-C/AddressBook-NewDesign copy/missing" autoconf'
 AUTOHEADER='${SHELL} "/workspaces/AddressBook-C/AddressBook-NewDesign copy/missing" autoheader'
 AUTOMAKE='${SHELL} "/workspaces/AddressBook-C/AddressBook-NewDesign copy/missing" automake-1.16'
 AWK='gawk'
 CC='gcc'
-CCDEPMODE='depmode=none'
+CCDEPMODE='depmode=gcc3'
 CFLAGS='-g -O2'
+CPP='gcc -E'
 CPPFLAGS=''
 CYGPATH_W='echo'
-DEFS='-DPACKAGE_NAME=\"Address\ Book\" -DPACKAGE_TARNAME=\"address-book\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"Address\ Book\ 1.0\" -DPACKAGE_BUGREPORT=\"notanubhav@gmail.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"address-book\" -DVERSION=\"1.0\"'
+DEFS='-DPACKAGE_NAME=\"Address\ Book\" -DPACKAGE_TARNAME=\"address-book\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"Address\ Book\ 1.0\" -DPACKAGE_BUGREPORT=\"notanubhav@gmail.com\" -DPACKAGE_URL=\"\" -DPACKAGE=\"address-book\" -DVERSION=\"1.0\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\"'
 DEPDIR='.deps'
+DLLTOOL='false'
+DSYMUTIL=''
+DUMPBIN=''
 ECHO_C=''
 ECHO_N='-n'
 ECHO_T=''
+EGREP='/usr/bin/grep -E'
 EXEEXT=''
+FGREP='/usr/bin/grep -F'
+GREP='/usr/bin/grep'
 INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
+LD='/usr/bin/ld -m elf_x86_64'
 LDFLAGS=''
 LIBOBJS=''
 LIBS=''
+LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+LIPO=''
+LN_S='ln -s'
 LTLIBOBJS=''
+LT_SYS_LIBRARY_PATH=''
 MAKEINFO='${SHELL} "/workspaces/AddressBook-C/AddressBook-NewDesign copy/missing" makeinfo'
+MANIFEST_TOOL=':'
 MKDIR_P='/usr/bin/mkdir -p'
+NM='/usr/bin/nm -B'
+NMEDIT=''
+OBJDUMP='objdump'
 OBJEXT='o'
+OTOOL64=''
+OTOOL=''
 PACKAGE='address-book'
 PACKAGE_BUGREPORT='notanubhav@gmail.com'
 PACKAGE_NAME='Address Book'
@@ -264,15 +559,19 @@ PACKAGE_TARNAME='address-book'
 PACKAGE_URL=''
 PACKAGE_VERSION='1.0'
 PATH_SEPARATOR=':'
+RANLIB='ranlib'
+SED='/usr/bin/sed'
 SET_MAKE=''
 SHELL='/bin/bash'
-STRIP=''
+STRIP='strip'
 VERSION='1.0'
+ac_ct_AR='ar'
 ac_ct_CC='gcc'
+ac_ct_DUMPBIN=''
 am__EXEEXT_FALSE=''
 am__EXEEXT_TRUE='#'
-am__fastdepCC_FALSE=''
-am__fastdepCC_TRUE='#'
+am__fastdepCC_FALSE='#'
+am__fastdepCC_TRUE=''
 am__include='include'
 am__isrc=''
 am__leading_dot='.'
@@ -281,13 +580,21 @@ am__quote=''
 am__tar='$${TAR-tar} chof - "$$tardir"'
 am__untar='$${TAR-tar} xf -'
 bindir='${exec_prefix}/bin'
+build='x86_64-pc-linux-gnu'
 build_alias=''
+build_cpu='x86_64'
+build_os='linux-gnu'
+build_vendor='pc'
 datadir='${datarootdir}'
 datarootdir='${prefix}/share'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
 dvidir='${docdir}'
 exec_prefix='${prefix}'
+host='x86_64-pc-linux-gnu'
 host_alias=''
+host_cpu='x86_64'
+host_os='linux-gnu'
+host_vendor='pc'
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
@@ -322,5 +629,17 @@ target_alias=''
 #define PACKAGE_URL ""
 #define PACKAGE "address-book"
 #define VERSION "1.0"
+#define STDC_HEADERS 1
+#define HAVE_SYS_TYPES_H 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_STDLIB_H 1
+#define HAVE_STRING_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_STRINGS_H 1
+#define HAVE_INTTYPES_H 1
+#define HAVE_STDINT_H 1
+#define HAVE_UNISTD_H 1
+#define HAVE_DLFCN_H 1
+#define LT_OBJDIR ".libs/"
 
-configure: exit 1
+configure: exit 0
