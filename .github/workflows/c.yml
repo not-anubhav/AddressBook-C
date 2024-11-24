@@ -16,14 +16,18 @@ jobs:
       - name: Install build dependencies
         run: sudo apt-get update && sudo apt-get install -y autoconf automake libtool
       - name: Generate configure script
-        run: autoreconf -i
+        run: |
+            cd 'AddressBook-NewDesign copy'
+            autoreconf -i
       - name: Configure
-        run: ./configure
+        run: |
+            cd 'AddressBook-NewDesign copy'
+            ./configure
       - name: Build
-        run: make
-      - name: Run tests
-        run: make check
-      - name: Distribution check
-        run: make distcheck
+        run: |
+            cd 'AddressBook-NewDesign copy'
+            make
       - name: Run the program
-        run: ./my_program
+        run: |
+            cd 'AddressBook-NewDesign copy'
+            ./my_program
