@@ -61,13 +61,17 @@ int validate_phone(AddressBook *addressBook, char mob[])
             break;
         }
     }
-    if(already_present == 0)
+    if(already_present == 1)
     {
-        strcpy(addressBook->contacts[addressBook->contactCount].phone, mob);
-    }
-    else {
         printf("Phone Number already present.\n");
     }
+    // if(already_present == 0)
+    // {
+    //     strcpy(addressBook->contacts[addressBook->contactCount].phone, mob);
+    // }
+    // else {
+    //     printf("Phone Number already present.\n");
+    // }
     return already_present;
 }
 
@@ -143,12 +147,14 @@ int validate_email(AddressBook *addressBook, char email[])
             break;
         }
     }
-
-    if (already_present == 0) {
-        strcpy(addressBook->contacts[addressBook->contactCount].email, email);
-    } else {
+    if (already_present == 1) {
         printf("Email ID already present.\n");
     }
+    // if (already_present == 0) {
+    //     strcpy(addressBook->contacts[addressBook->contactCount].email, email);
+    // } else {
+    //     printf("Email ID already present.\n");
+    // }
     return already_present;
 }
 
@@ -215,4 +221,97 @@ int search_email(AddressBook *addressBook, char email[], int* foundindices, int*
         printf("Contact not Found.\n");
     }
     return flag_found;
+}
+
+
+void edit_contact(AddressBook *addressBook, int index)
+{
+    int option;
+    int edit_n = 0;
+    int edit_p = 0;
+    int edit_e = 0;
+    do {
+        printf("\nEdit Menu:\n");
+        printf("1. Edit Name\n");
+        printf("2. Edit Phone no.\n");
+        printf("3. Edit Email ID\n");
+        printf("4. Exit\n");
+        printf("\nEnter your choice: ");
+        scanf("%d", &option);
+        getchar();
+
+        switch (option) {
+            case 1:
+                do
+                {
+                    char name[50];
+                    printf("Enter the New Name: ");
+                    scanf("%[^\n]", name);
+                    if(read_name(addressBook, name) == 1)
+                    {
+                        strcpy(addressBook->contacts[index].name, name);
+                        edit_n = 1;
+                    }
+                    else{
+                        printf("Invalid Name.\n");
+                    }
+                    getchar();
+                }while(edit_n == 0);
+                break;
+
+            case 2:
+                do
+                {
+                    char phone[11];
+                    printf("Enter the New Phone no. : ");
+                    scanf("%s", phone);
+                    if(read_mob(addressBook, phone) == 1)
+                    {
+                        int v_p = validate_phone(addressBook, phone);
+                        if (v_p == 1) {
+                            edit_p = 0;
+                        }
+                        else {
+                            strcpy(addressBook->contacts[index].phone, phone);
+                            edit_p = 1;
+                        }
+                    }
+                    else{
+                        printf("Invalid Phone no.\n");
+                    }
+                    getchar();
+                }while(edit_p == 0);
+                break;
+
+            case 3:
+                do
+                {
+                    char email[50];
+                    printf("Enter the New Email ID. : ");
+                    scanf("%s", email);
+                    if(read_email(addressBook, email) == 1)
+                    {
+                        int v_e = validate_email(addressBook, email);
+                        if (v_e == 1) {
+                            edit_e = 0;
+                        }
+                        else {
+                            strcpy(addressBook->contacts[index].email, email);
+                            edit_e = 1;
+                        }
+                    }
+                    else{
+                        printf("Invalid Email ID.\n");
+                    }
+                    //getchar();
+                }while(edit_e == 0);
+                break;
+
+            case 4:
+                break;
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }while (option != 4);
 }
