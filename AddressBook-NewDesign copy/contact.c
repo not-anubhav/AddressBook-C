@@ -62,6 +62,9 @@ void createContact(AddressBook *addressBook)
             {
                 ph_flag = 0;
             }
+            else {
+                strcpy(addressBook->contacts[addressBook->contactCount].phone, mob);
+            }
         }
         else
         {
@@ -81,6 +84,9 @@ void createContact(AddressBook *addressBook)
             if(v_e == 1)
             {
                 e_flag = 0;
+            }
+            else {
+                strcpy(addressBook->contacts[addressBook->contactCount].email, email);
             }
 		}
 	}while (e_flag == 0);
@@ -126,7 +132,7 @@ int searchContact(AddressBook *addressBook, int* foundindices)
             case 2:
                 do
                 {
-                    char phone[10];
+                    char phone[11];
                     printf("Enter the Contact Phone no.: ");
                     scanf("%s", phone);
                     if(read_mob(addressBook, phone) == 1)
@@ -167,8 +173,39 @@ void editContact(AddressBook *addressBook)
 {
 	/* Define the logic for Editcontact */
 
+	int foundindices[100];
+	int foundCount = searchContact(addressBook, foundindices);
+	if(foundCount <= 0)
+	{
+	    printf("No contact found\n");
+		return;
+	}
 
+	int editindex = 0;
+	int edit_flag = 0;
+
+	do {
+	    printf("Enter the contact no. you want to edit : ");
+		scanf("%d", &editindex);
+		getchar();
+		int actualindex = editindex - 1;
+		for(int i = 0; i < foundCount; i++){
+		    if(actualindex == foundindices[i])
+			{
+		        edit_flag = 1;
+				break;
+			}
+		}
+		if(edit_flag == 1){
+		    edit_contact(addressBook, actualindex);
+		}
+		else{
+		    printf("Enter Valid Contact no.\n");
+		}
+
+	}while (edit_flag == 0);
 }
+
 
 void deleteContact(AddressBook *addressBook)
 {
