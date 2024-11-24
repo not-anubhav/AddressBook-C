@@ -1,2 +1,2 @@
 #include "contact.h"
-void populateAddressBook(AddressBook* addressBook);
+void populateAddressBook(AddressBook *addressBook);
