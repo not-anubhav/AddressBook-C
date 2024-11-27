@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include "file.h"
-
 void saveContactsToFile(AddressBook *addressBook)
 {
     FILE* fptr = fopen("contacts.csv", "w");
 
-    fprintf(fptr, "%s,%d\n", "Count", addressBook->contactCount);
-    fprintf(fptr, "%s,%s,%s\n", "NAME", "PHONE", "EMAIL");
+    fprintf(fptr, "%s,%s,%d\n", "Contact", "Count", addressBook->contactCount);
     for ( int i = 0; i < addressBook->contactCount; i++)
     {
         fprintf(fptr, "%s,%s,%s\n", addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
@@ -21,12 +19,11 @@ int loadContactsFromFile(AddressBook *addressBook)
 
     if(fptr == NULL)
     {
-        printf("File does not exist\n");
+        printf("\n>>>>FILE DOES NOT EXIST<<<<\n");
         return 0;
     }
-    fseek(fptr, 6, SEEK_SET);
+    fseek(fptr, 14, SEEK_SET);
     fscanf(fptr, "%d\n", &addressBook->contactCount);
-    fseek(fptr, 26, SEEK_SET);
     for(int i = 0; i < addressBook->contactCount; i++)
     {
         fscanf(fptr, "%[a-z A-Z],%[0-9],%s\n", addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);

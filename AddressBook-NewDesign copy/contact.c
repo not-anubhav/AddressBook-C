@@ -6,13 +6,19 @@
 #include "file.h"
 #include "populate.h"
 
-void listContacts(AddressBook *addressBook)
+int listContacts(AddressBook *addressBook)
 {
     // Sort contacts based on the chosen criteria
-    for (int i = 0; i < addressBook->contactCount; i++)
-    {
-        printf("Contact %d: %s, Phone: %s, Email ID: %s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
+    if (addressBook->contactCount == 0) {
+        printf("No Contacts Found\n");
     }
+    else {
+        for (int i = 0; i < addressBook->contactCount; i++)
+        {
+            printf("Contact %d: %s, Phone: %s, Email ID: %s\n", i + 1, addressBook->contacts[i].name, addressBook->contacts[i].phone, addressBook->contacts[i].email);
+        }
+    }
+    return 0;
 }
 
 void initialize(AddressBook *addressBook)

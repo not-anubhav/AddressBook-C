@@ -20,7 +20,7 @@ void createContact(AddressBook *addressBook);
 int searchContact(AddressBook *addressBook, int *);
 void editContact(AddressBook *addressBook);
 void deleteContact(AddressBook *addressBook);
-void listContacts(AddressBook *addressBook);
+int listContacts(AddressBook *addressBook);
 void initialize(AddressBook *addressBook);
 void saveAndExit(AddressBook *addressBook);
 int read_name(AddressBook *addressBook, char[]);
