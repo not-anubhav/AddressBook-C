@@ -12,7 +12,7 @@ static Contact dummyContacts[] = {
     {"Hannah Clark", "5556667777", "hannah@example.com"},
     {"Ian Lewis", "8889990000", "ian@example.com"}};
 
-void populateAddressBook(AddressBook *addressBook)
+void populateAddressBook(AddressBook *addressBook) // Function Definition for printing and storing dummy contacts inside the structure member and on CSV file
 {
     int numDummyContacts = sizeof(dummyContacts) / sizeof(dummyContacts[0]);
     for (int i = 0; i < numDummyContacts && addressBook->contactCount < MAX_CONTACTS; ++i)
