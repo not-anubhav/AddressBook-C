@@ -1,7 +1,9 @@
 #ifndef CONTACT_H
-#define CONTACT_H
+#define CONTACT_H // We have defined a header file named contact.h
 
-#define MAX_CONTACTS 100
+#define MAX_CONTACTS 100 // We have defined a maximum size of 100 for contacts
+
+// Define a typedef structure with Contact as the name of the Datatype
 
 typedef struct
 {
@@ -10,11 +12,15 @@ typedef struct
     char email[50];
 } Contact;
 
+// Define another structure with AddressBook as the name of the Datatype
+
 typedef struct
 {
-    Contact contacts[MAX_CONTACTS];
-    int contactCount;
+    Contact contacts[MAX_CONTACTS]; // Declare a character array with size of MAX_CONTACT i.e previously defined as 100
+    int contactCount; // Declare an integer variable for keeping the count of the number of contacts in the AddressBook
 } AddressBook;
+
+// Fuction Declaration for all the functions used in the program
 
 void createContact(AddressBook *addressBook);
 int searchContact(AddressBook *addressBook, int *);
