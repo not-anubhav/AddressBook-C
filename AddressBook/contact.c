@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include "contact.h"
 #include "file.h"
-#include "populate.h"
 
 int listContacts(AddressBook *addressBook)
 {
@@ -24,7 +23,6 @@ int listContacts(AddressBook *addressBook)
 void initialize(AddressBook *addressBook) // This function is called at the very start of the program and loads the contacts from the CSV file
 {
     addressBook->contactCount = 0; // Initialize the contact count to zero and append all the contacts from the file
-    populateAddressBook(addressBook);
 
     // Load contacts from file during initialization (After files)
     loadContactsFromFile(addressBook);
