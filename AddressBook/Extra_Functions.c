@@ -69,13 +69,6 @@ int validate_phone(AddressBook *addressBook, char mob[]) // This function is use
     {
         printf("Phone Number already present.\n");
     }
-    // if(already_present == 0)
-    // {
-    //     strcpy(addressBook->contacts[addressBook->contactCount].phone, mob);
-    // }
-    // else {
-    //     printf("Phone Number already present.\n");
-    // }
     return already_present; // Return the flag value from the function
 }
 
@@ -174,11 +167,6 @@ int validate_email(AddressBook *addressBook, char email[]) // This function chec
     {
         printf("Email ID already present.\n");
     }
-    // if (already_present == 0) {
-    //     strcpy(addressBook->contacts[addressBook->contactCount].email, email);
-    // } else {
-    //     printf("Email ID already present.\n");
-    // }
     return already_present; // return the already present flag value from the function
 }
 
