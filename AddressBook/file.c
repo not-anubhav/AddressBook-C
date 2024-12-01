@@ -27,7 +27,6 @@ int loadContactsFromFile(AddressBook *addressBook) //Function Definition of load
         printf("\n>>>>FILE DOES NOT EXIST<<<<\n"); // Print the error message
         return 0; // return to main menu
     }
-    //fseek(fptr, 14, SEEK_SET);
 
     // Use the same format used for writing and read the value of count from 1st row of file and store it inside contactCount variable
     fscanf(fptr, "#%d NAME,PHONE,EMAIL\n", &addressBook->contactCount); 
