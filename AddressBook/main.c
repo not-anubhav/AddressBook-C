@@ -6,7 +6,7 @@ TITLE : C - Project "ADDRESS BOOK"
 
 DESCRIPTION : It keeps track of names and telephone/mobile numbers and e-mail addresses.
 
-FILES : main.c, contact.c, Extra_Functions.c, file.c, contact.h, file.h
+FILES : main.c, contact.c, Extra_Functions.c, file.c, contact.h, file.h, contacts.csv
 
 FILE DESCRIPTION:
 1. main.c : It is the main file containing the main function and initialization, It is responsible for performing main operations in Address Book
@@ -15,6 +15,7 @@ FILE DESCRIPTION:
 4. file.c : It contains function definition and code logic for saving data in the CSV file and fetching data from the CSV file
 5. contact.h : It contains Address Book structure for storing names, phone numbers and email address, it also contains all the function declaration
 5. file.h : It contains the function declation for save contact in file function and load contact for file function present in file.c
+5. contacts.csv : This file contains all the contacts present inside the Address Book with contact count
 
 DATE : 01-12-2024
 
