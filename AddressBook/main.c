@@ -17,8 +17,7 @@ FILE DESCRIPTION:
 
 DATE : 01-12-2024
 
-EXECUTION : 
-
+EXECUTION :
 1. Compile : To compile the all the codes present inside the Address Book directory, Type gcc *c in terminal and press enter this will generate an OUTPUT file in the same directory
 2. Run : To run the generated output file type ./(Output File name).out and the main menu of Address Book will pop up
 
