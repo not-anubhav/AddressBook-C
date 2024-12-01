@@ -8,7 +8,7 @@
 int listContacts(AddressBook *addressBook)
 {
     // List all the contacts present in the AddressBook
-    if (addressBook->contactCount == 0) { // If the contact count is zero i.e no contacts are present in the address book
+    if (addressBook->contactCount <= 0) { // If the contact count is zero i.e no contacts are present in the address book
         printf("No Contacts Found\n"); // Print the message
     }
     else {
@@ -111,6 +111,11 @@ void createContact(AddressBook *addressBook)
 int searchContact(AddressBook *addressBook, int *foundindices) // If search function is being call from main function then NULL will be passed in found indices
 {
     /* Define the logic for search */
+    if (addressBook->contactCount <= 0) // If found count is less than or equal to zero i.e no contact found from the search
+    {
+        printf("\n ADDRESS BOOK EMPTY !!! !!!\n"); // Print error message
+        return -1; // Return to the previous menu
+    }
     int option; // option variable to navigate through different operations of search menu
     int foundCount = 0; // Contacts index found count
     int search_n = 0; // search name flag
@@ -200,17 +205,19 @@ int searchContact(AddressBook *addressBook, int *foundindices) // If search func
 void editContact(AddressBook *addressBook)
 {
     /* Define the logic for Editcontact */
-
-    int foundindices[100]; // Create an integer array for storing the contact indices of found contacts  
-    int foundCount = searchContact(addressBook, foundindices);
-    /* Call the search function with found indices array and store the return value inside the found count
-    also store the index of searched contacts inside the found indices array*/
-
-    if (foundCount <= 0) // If found count is less than or equal to zero i.e no contact found from the search
+    if (addressBook->contactCount <= 0) // If found count is less than or equal to zero i.e no contact found from the search
     {
-        printf("No contact found\n"); // Print error message
+        printf("\nNO CONTACT FOUND !!!\n"); // Print error message
         return; // Return to the previous menu
     }
+    int foundindices[100]; // Create an integer array for storing the contact indices of found contacts  
+    int foundCount = searchContact(addressBook, foundindices);
+    if(foundCount == -1){
+        printf("\nExiting...\n");
+        return;
+    }
+    /* Call the search function with found indices array and store the return value inside the found count
+    also store the index of searched contacts inside the found indices array*/
 
     int editindex = 0; // Create a edit index variable for storing the index place user wants to edit
     int edit_flag = 0;
@@ -244,12 +251,21 @@ void editContact(AddressBook *addressBook)
 void deleteContact(AddressBook *addressBook)
 {
     /* Define the logic for deletecontact */
+    if (addressBook->contactCount <= 0) // If found count is less than or equal to zero i.e no contact found from the search
+    {
+        printf("\nNO CONTACT FOUND !!!\n"); // Print error message
+        return; // Return to the previous menu
+    }
     int foundindices[100];  // Create an integer array for storing the contact indices of found contacts  
 
     /* Call the search function with found indices array and store the return value inside the found count
     also store the index of searched contacts inside the found indices array*/
     int foundCount = searchContact(addressBook, foundindices);
 
+    if(foundCount == -1){
+        printf("\nExiting...\n");
+        return;
+    }
 
     if (foundCount <= 0) // If found count is less than or equal to zero i.e no contact found from the search
     {
