@@ -11,7 +11,7 @@ FILES : main.c, contact.c, Extra_Functions.c, file.c, contact.h, file.h, contact
 FILE DESCRIPTION:
 1. main.c : It is the main file containing the main function and initialization, It is responsible for performing main operations in Address Book
 2. contact.c : It contains all the function definition and code logic for for main menu and all the sub menus inside Address Book
-3. Extra_Functions.c : This file contains all the sub functions for supporting the main functions responisble for performing different operations inside Address Book
+3. Extra_Functions.c : This file contains all the sub functions for supporting the main functions responsible for performing different operations inside Address Book
 4. file.c : It contains function definition and code logic for saving data in the CSV file and fetching data from the CSV file
 5. contact.h : It contains Address Book structure for storing names, phone numbers and email address, it also contains all the function declaration
 5. file.h : It contains the function declation for save contact in file function and load contact for file function present in file.c
@@ -20,7 +20,7 @@ FILE DESCRIPTION:
 DATE : 01-12-2024
 
 EXECUTION :
-1. Compile : To compile the all the codes present inside the Address Book directory, Type gcc *c in terminal and press enter this will generate an OUTPUT file in the same directory
+1. Compile : To compile all the codes present inside the Address Book directory, Type gcc *c in terminal and press enter this will generate an OUTPUT file in the same directory
 2. Run : To run the generated output file type ./(Output File name).out and the main menu of Address Book will pop up
 
 */
